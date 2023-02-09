@@ -7,13 +7,57 @@
 }
 
 html {
-    overflow: overlay;
+    @include respond-phone {
+        font-size: 50%;
+    }
 
+    overflow: overlay;
     font-family: $sans-serif;
     font-size: 62.5%;
-    color: $light-text;
+    color: $text;
+}
 
-    background-color: $light-background;
+body {
+    @include flex(column, center, center, center, 7rem, nowrap);
+
+    @include respond-phone {
+        gap: 5rem;
+    }
+
+    width: 100vw;
+    height: 100vh;
+
+    text-align: center;
+
+    background: linear-gradient(rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)),
+        url("https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3870&q=80");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    h1 {
+        font-size: 5.8rem;
+    }
+
+    #countdown {
+        @include flex(row, center, center, center, 5rem, nowrap);
+
+        @include respond-phone {
+            @include flex(column, center, center, center, 2rem, nowrap);
+        }
+
+        .time {
+            @include flex(column, center, center, center, 1rem, nowrap);
+
+            span {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 4.8rem;
+            }
+        }
+    }
 }
 
 input,
