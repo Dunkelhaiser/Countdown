@@ -1,0 +1,39 @@
+button {
+    @include hover;
+
+    cursor: pointer;
+
+    padding: 1.5rem 4rem;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $foreground;
+
+    background-color: $link;
+    border: none;
+    border-radius: 0.35em;
+    outline: $text;
+    outline-color: $link-dark;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
+
+    &:hover {
+        background-color: $link-light;
+    }
+
+    &:active {
+        background-color: $link-dark;
+    }
+}
+
+#delete-countdown-btn {
+    background-color: $red;
+    outline-color: $red-dark;
+
+    &:hover {
+        background-color: $red-light;
+    }
+
+    &:active {
+        background-color: $red-dark;
+    }
+}

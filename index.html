@@ -8,9 +8,10 @@
         <meta name="description" content="Countdown." />
         <title>Countdown</title>
         <script src="./src/countdown.ts" type="module" defer></script>
+        <script src="/src/modalWindow.ts" type="module" defer></script>
     </head>
     <body>
-        <h1>Countdown</h1>
+        <h1 id="countdown-title">Countdown</h1>
         <div id="countdown">
             <div class="time">
                 <h2 id="days">00</h2>
@@ -29,6 +30,23 @@
                 <span>Seconds</span>
             </div>
         </div>
-        <div><input id="countdown-selector" type="datetime-local" /></div>
+        <span id="modify-btn" class="open-modal">Modify Countdown</span>
+        <div class="overlay hidden"></div>
+        <div class="modal-window hidden">
+            <h2>Modify Countdown</h2>
+            <a class="close-modal">&times;</a>
+            <div class="content">
+                <div>
+                    <label>Countdown title:</label>
+                    <input id="set-countdown-title" type="text" />
+                </div>
+                <div>
+                    <label>Countdown destination:</label>
+                    <input id="set-countdown-time" type="datetime-local" min="2023-06-07T00:00" />
+                </div>
+                <button type="button" id="set-countdown-btn">Set Countdown</button>
+                <button type="button" id="delete-countdown-btn">Delete Countdown</button>
+            </div>
+        </div>
     </body>
 </html>
