@@ -1,0 +1,13 @@
+input {
+    padding: 0.5rem;
+
+    background-color: $white;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 0.35em;
+    outline: none;
+
+    &:focus {
+        border-color: $text-overlay-dark;
+    }
+}

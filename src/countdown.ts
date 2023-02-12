@@ -42,9 +42,9 @@ const countdown = () => {
     const secondsTime = Math.floor(difference / 1000) % 60;
 
     days.innerText = String(daysTime);
-    hours.innerText = String(hoursTime < 10 ? `0${hoursTime}` : hoursTime);
-    minutes.innerText = String(minutesTime < 10 ? `0${minutesTime}` : minutesTime);
-    seconds.innerText = String(secondsTime < 10 ? `0${secondsTime}` : secondsTime);
+    hours.innerText = String(hoursTime < 10 && hoursTime >= 0 ? `0${hoursTime}` : hoursTime);
+    minutes.innerText = String(minutesTime < 10 && minutesTime >= 0 ? `0${minutesTime}` : minutesTime);
+    seconds.innerText = String(secondsTime < 10 && secondsTime >= 0 ? `0${secondsTime}` : secondsTime);
 
     if (secondsTime === 1) seconds.parentNode!.querySelector("span")!.innerText = "Second";
     else seconds.parentNode!.querySelector("span")!.innerText = "Seconds";
